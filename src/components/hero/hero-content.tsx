@@ -24,8 +24,8 @@ export function HeroContent() {
       </AnimatedSection>
 
       <nav className="flex gap-6 justify-center pt-4" aria-label="Social links">
-        {SOCIALS.filter((s) => s.isFooter === false).map(({ href, icon, external }) => (
-          <IconLink key={href} href={href} icon={icon} external={external} />
+        {SOCIALS.filter((s) => s.isFooter === false).map(({ href, icon, external, label }) => (
+          <IconLink key={href} href={href} icon={icon} label={label} external={external} />
         ))}
       </nav>
     </div>
