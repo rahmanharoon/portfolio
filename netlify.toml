@@ -2,6 +2,14 @@
   publish = "dist"
   command = "npm run build"
 
+# SPA fallback - redirect all routes to index.html for client-side routing
+# This handles all routes including /projects, /, and any other paths
+# Status 200 = rewrite (not redirect), so URL stays the same and React Router handles routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]

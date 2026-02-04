@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import { AnimatedSection } from '@/components/animated-section';
+import { AnimatedSection } from '@/components/reusable/animated-section';
 
 export function HeroScrollCta() {
   return (
