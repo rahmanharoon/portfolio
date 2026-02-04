@@ -9,6 +9,7 @@ import {
   Linkedin,
   Mail,
   Smartphone,
+  Twitter,
   Youtube,
 } from 'lucide-react';
 
@@ -37,6 +38,13 @@ export const SOCIALS: {
     label: 'LinkedIn',
     href: 'https://linkedin.com/in/rahman-haroon',
     icon: Linkedin,
+    external: true,
+    isFooter: false,
+  },
+  {
+    label: 'X',
+    href: 'https://x.com/rahman__haroon',
+    icon: Twitter,
     external: true,
     isFooter: false,
   },
@@ -111,4 +119,30 @@ export const PROJECTS: {
     tags: ['Next.js', 'React Native', 'Expo'],
     icon: Globe,
   },
+];
+
+export const SEO_CONFIG = {
+  defaultTitle: 'Rahman Haroon - Senior Fullstack Developer Portfolio',
+  defaultDescription:
+    'A techie at heart, turning caffeine into code and ideas into scalable products. I craft digital experiences that millions love to use.',
+  image: '/src/assets/rh-logo.png',
+  url: 'https://rahman-haroon.netlify.app/',
+  siteName: 'Rahman Haroon Portfolio',
+  author: 'Rahman Haroon',
+  twitterHandle: '@rahmanharoon',
+} as const;
+
+export const SEO_DESCRIPTION =
+  'Explore my portfolio of projects including Upgrad Learning App, SportsBizz Platform, Garage Hero, and Stors. Built with React, TypeScript, Next.js, and React Native.';
+
+export const SEO_KEYWORDS = [
+  'Rahman Haroon Projects',
+  'React Projects',
+  'TypeScript Projects',
+  'Next.js Projects',
+  'React Native Projects',
+  'Web Development Projects',
+  'Mobile App Development',
+  'Fullstack Projects',
+  'Portfolio Projects',
 ];
