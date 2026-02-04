@@ -17,19 +17,17 @@ export function HeroContent() {
         </h1>
       </AnimatedSection>
 
-      <AnimatedSection animation="fadeInUp" delay={0.3}>
+      <AnimatedSection animation="fadeInUp" delay={0.4}>
         <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
           {HERO.tagline}
         </p>
       </AnimatedSection>
 
-      <AnimatedSection animation="fadeInUp" delay={0.4}>
-        <nav className="flex gap-6 justify-center pt-4" aria-label="Social links">
-          {SOCIALS.filter((s) => s.isFooter === false).map(({ href, icon, external }) => (
-            <IconLink key={href} href={href} icon={icon} external={external} />
-          ))}
-        </nav>
-      </AnimatedSection>
+      <nav className="flex gap-6 justify-center pt-4" aria-label="Social links">
+        {SOCIALS.filter((s) => s.isFooter === false).map(({ href, icon, external }) => (
+          <IconLink key={href} href={href} icon={icon} external={external} />
+        ))}
+      </nav>
     </div>
   );
 }

@@ -1,7 +1,14 @@
+import { Link } from 'react-router-dom';
 import { AnimatedSection } from '@/components/animated-section';
 import { PROJECTS } from '@/lib/constants';
 
-export function Projects() {
+interface ProjectsProps {
+  limit?: number;
+}
+
+export function Projects({ limit }: ProjectsProps) {
+  const displayedProjects = limit ? PROJECTS.slice(0, limit) : PROJECTS;
+
   return (
     <section id="projects" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
@@ -13,7 +20,7 @@ export function Projects() {
         </AnimatedSection>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {PROJECTS.map((project, index) => {
+          {displayedProjects.map((project, index) => {
             const Icon = project.icon;
             return (
               <AnimatedSection
@@ -44,6 +51,17 @@ export function Projects() {
             );
           })}
         </div>
+
+        {limit && PROJECTS.length > limit && (
+          <div className="mt-12 text-center">
+            <Link
+              to="/projects"
+              className="inline-flex items-center justify-center px-6 py-3 border border-white/20 rounded-lg text-white hover:bg-white/10 transition-colors"
+            >
+              View All Projects
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
