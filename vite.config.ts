@@ -24,13 +24,25 @@ export default defineConfig({
         manualChunks: (id) => {
           // Split node_modules into separate chunks
           if (id.includes('node_modules')) {
-            // React core libraries
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-              return 'react-vendor';
+            // React core libraries (always needed, keep together)
+            if (id.includes('react') && !id.includes('react-router') && !id.includes('react-dom')) {
+              return 'react-core';
             }
-            // Lucide icons (large library, split separately)
+            // React DOM (always needed with React)
+            if (id.includes('react-dom')) {
+              return 'react-core';
+            }
+            // React Router (can be loaded separately, split out)
+            if (id.includes('react-router')) {
+              return 'react-router';
+            }
+            // Lucide icons (large library, split separately for better tree-shaking)
             if (id.includes('lucide-react')) {
               return 'icons';
+            }
+            // Utility libraries (small, can be bundled together)
+            if (id.includes('clsx') || id.includes('tailwind-merge')) {
+              return 'utils';
             }
             // Other vendor libraries
             return 'vendor';

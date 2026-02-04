@@ -1,5 +1,5 @@
-import { AnimatedSection } from '@/components/animated-section';
-import { IconLink } from '@/components/icon-link';
+import { AnimatedSection } from '@/components/reusable/animated-section';
+import { IconLink } from '@/components/reusable/icon-link';
 import { HERO, SOCIALS } from '@/lib/constants';
 
 export function HeroContent() {
