@@ -3,7 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rahman Haroon - Portfolio</title>
+    
+    <!-- Preconnect hints for faster initial connection -->
+    <link rel="preconnect" href="https://rahman-haroon.netlify.app" crossorigin />
+    <link rel="dns-prefetch" href="https://rahman-haroon.netlify.app" />
+    
+    <!-- Critical CSS - Inline to prevent render blocking -->
+    <style>
+      :root {
+        --radius: 0.625rem;
+        --background: #000000;
+        --foreground: #ffffff;
+        --card: #0a0a0a;
+        --card-foreground: #ffffff;
+        --popover: #0a0a0a;
+        --popover-foreground: #ffffff;
+        --primary: #ffffff;
+        --primary-foreground: #000000;
+        --secondary: #1a1a1a;
+        --secondary-foreground: #ffffff;
+        --muted: #1a1a1a;
+        --muted-foreground: #888888;
+        --accent: #1a1a1a;
+        --accent-foreground: #ffffff;
+        --destructive: #ff4444;
+        --border: #2a2a2a;
+        --input: #2a2a2a;
+        --ring: #ffffff;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      * {
+        border-color: var(--border);
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--background);
+        color: var(--foreground);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+      }
+      #root {
+        min-height: 100vh;
+      }
+    </style>
+    
+    <!-- Primary Meta Tags -->
+    <title>Rahman Haroon</title>
+    <meta name="title" content="Rahman Haroon - Senior Fullstack Developer Portfolio" />
+    <meta name="description" content="A techie at heart, turning caffeine into code and ideas into scalable products. I craft digital experiences that millions love to use." />
+    <meta name="keywords" content="Rahman Haroon, Fullstack Developer, Senior Developer, React, TypeScript, Next.js, React Native, Portfolio, Web Developer, Software Engineer" />
+    <meta name="author" content="Rahman Haroon" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/src/assets/rh-logo.png" />
+    <link rel="apple-touch-icon" href="/src/assets/rh-logo.png" />
+    <link rel="shortcut icon" href="/src/assets/rh-logo.png" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rahman-haroon.netlify.app/" />
+    <meta property="og:title" content="Rahman Haroon - Senior Fullstack Developer Portfolio" />
+    <meta property="og:description" content="A techie at heart, turning caffeine into code and ideas into scalable products. I craft digital experiences that millions love to use." />
+    <meta property="og:image" content="/src/assets/rh-logo.png" />
+    <meta property="og:site_name" content="Rahman Haroon Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://rahman-haroon.netlify.app/" />
+    <meta name="twitter:title" content="Rahman Haroon - Senior Fullstack Developer Portfolio" />
+    <meta name="twitter:description" content="A techie at heart, turning caffeine into code and ideas into scalable products. I craft digital experiences that millions love to use." />
+    <meta name="twitter:image" content="/src/assets/rh-logo.png" />
+    <meta name="twitter:creator" content="@rahmanharoon" />
+    <meta name="twitter:site" content="@rahmanharoon" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rahman-haroon.netlify.app/" />
   </head>
   <body>
     <div id="root"></div>

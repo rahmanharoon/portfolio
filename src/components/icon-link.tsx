@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 type IconLinkProps = {
   href: string;
   icon: LucideIcon;
+  label: string;
   external?: boolean;
   size?: number;
   className?: string;
@@ -12,6 +13,7 @@ type IconLinkProps = {
 export function IconLink({
   href,
   icon: Icon,
+  label,
   external = true,
   size = 20,
   className,
@@ -19,22 +21,21 @@ export function IconLink({
   const baseClassName =
     'p-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-300';
 
-  if (external) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={cn(baseClassName, className)}
-      >
-        <Icon size={size} />
-      </a>
-    );
-  }
+  const additionalProps = external
+    ? {
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    }
+    : {};
 
   return (
-    <a href={href} className={cn(baseClassName, className)}>
-      <Icon size={size} />
+    <a
+      href={href}
+      {...additionalProps}
+      className={cn(baseClassName, className)}
+      aria-label={label}
+    >
+      <Icon size={size} aria-hidden="true" />
     </a>
   );
 }

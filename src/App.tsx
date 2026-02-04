@@ -1,15 +1,15 @@
-import { Hero } from '@/components/hero';
-import { Projects } from '@/components/projects';
-import { Contact } from '@/components/contact';
-import { Footer } from '@/components/footer';
+import { Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { PageLoader } from '@/components/reusable/page-loader';
+import { HomePage, ProjectsPage } from '@/pages';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Hero />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+      </Routes>
+    </Suspense>
   );
 }

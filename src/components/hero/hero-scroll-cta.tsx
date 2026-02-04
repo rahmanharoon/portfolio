@@ -13,7 +13,7 @@ export function HeroScrollCta() {
         className="animate-bounce block"
         aria-label="Scroll to projects"
       >
-        <ChevronDown size={24} className="text-gray-500" />
+        <ChevronDown size={24} className="text-gray-300" />
       </a>
     </AnimatedSection>
   );

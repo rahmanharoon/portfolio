@@ -1,0 +1,79 @@
+import { Link } from 'react-router-dom';
+import { AnimatedSection } from '@/components/animated-section';
+import { PROJECTS } from '@/lib/constants';
+
+interface ProjectGridProps {
+  limit?: number;
+  heading?: string;
+  description?: string;
+  showSection?: boolean;
+}
+
+export function ProjectGrid({ limit, heading = 'Selected Work', description = 'Projects', showSection = true }: ProjectGridProps) {
+  const displayedProjects = limit ? PROJECTS.slice(0, limit) : PROJECTS;
+
+  const content = (
+    <div className="max-w-5xl mx-auto">
+      <AnimatedSection animation="fadeInUp">
+        <p className="text-gray-400 text-sm tracking-[0.3em] uppercase mb-4">
+          {heading}
+        </p>
+        <h2 className="text-3xl md:text-5xl font-bold mb-16">{description}</h2>
+      </AnimatedSection>
+
+      <div className="grid md:grid-cols-3 gap-8">
+        {displayedProjects.map((project, index) => {
+          const Icon = project.icon;
+          return (
+            <AnimatedSection
+              key={project.title}
+              animation="fadeInUp"
+              delay={0.1 * (index + 1)}
+            >
+              <article className="group p-8 border border-white/10 rounded-lg hover-lift bg-white/5 backdrop-blur-sm h-full">
+                <div className="mb-6 text-gray-400 group-hover:text-white transition-colors">
+                  <Icon size={24} />
+                </div>
+                <h3 className="text-xl font-semibold mb-4">{project.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs px-3 py-1 border border-white/20 rounded-full text-gray-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            </AnimatedSection>
+          );
+        })}
+      </div>
+
+      {limit && PROJECTS.length > limit && (
+        <div className="mt-12 text-center">
+          <Link
+            to="/projects"
+            className="inline-flex items-center justify-center px-6 py-3 border border-white/20 rounded-lg text-white hover:bg-white/10 transition-colors"
+          >
+            View All Projects
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+
+  if (showSection) {
+    return (
+      <section id="projects" className="py-24 px-6">
+        {content}
+      </section>
+    );
+  }
+
+  return content;
+}
