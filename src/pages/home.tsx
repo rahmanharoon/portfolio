@@ -1,5 +1,5 @@
 import { Hero } from '@/components/hero';
-import { Projects } from '@/components/projects';
+import { ProjectGrid } from '@/components/reusable/project-grid';
 import { Contact } from '@/components/contact';
 import { Footer } from '@/components/footer';
 import { SEO } from '@/components/seo';
@@ -14,7 +14,7 @@ export function HomePage() {
       <StructuredData type="WebSite" />
       <div className="min-h-screen bg-black text-white">
         <Hero />
-        <Projects limit={3} />
+        <ProjectGrid limit={3} />
         <Contact />
         <Footer />
       </div>
