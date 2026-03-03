@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Footer } from '@/components/reusable/footer';
 import { ProjectGrid } from '@/components/projects/project-grid';
@@ -8,6 +9,10 @@ import { Contact } from '@/components/contact/contact';
 
 export function ProjectsPage() {
   const projectsPageUrl = `${SEO_CONFIG.url}projects`;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <>
