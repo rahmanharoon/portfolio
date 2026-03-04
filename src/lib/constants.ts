@@ -101,7 +101,7 @@ export const PROJECTS: Project[] = [
       "An AI-driven content creation platform that converts text into engaging videos using realistic AI voices, dynamic visuals, and automated media generation tools for creators, marketers, and businesses.",
     tags: ["Next.js", "TypeScript", "TTS", "OpenAi", "MongoDB", "Trpc"],
     icon: Globe,
-    webLink: "https://fliki.ai/?via=rahman-haroon",
+    webLink: "https://fliki.ai/?via=tuna-labs",
     appStoreLink: "https://apps.apple.com/",
     playStoreLink: "https://play.google.com/store/apps/",
   },
