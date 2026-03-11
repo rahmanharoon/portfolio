@@ -22,6 +22,13 @@ export interface Project {
   playStoreLink?: string;
 }
 
+export interface Blog {
+  title: string;
+  href: string;
+  description: string;
+  source?: string;
+}
+
 export const HERO = {
   role: "Senior Fullstack Developer",
   name: "Rahman Haroon",
@@ -214,6 +221,16 @@ export const PROJECTS: Project[] = [
     tags: ["HTML", "CSS", "jQuery"],
     icon: Globe,
     webLink: "https://pcsneeds.com",
+  },
+];
+
+export const blogs: Blog[] = [
+  {
+    title: "Updating SVG image color dynamically in React-Native",
+    href: "https://www.antstack.com/blog/Updating-SVG-image-color-dynamically-in-React-Native/",
+    description:
+      "How to render SVGs in React Native and change their colors dynamically using react-native-svg and SVG transformers.",
+    source: "AntStack",
   },
 ];
 

@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Hero } from '@/components/hero';
 import { ProjectGrid } from '@/components/projects/project-grid';
+import { BlogGrid } from '@/components/blogs/blog-grid';
 import { Loader } from '@/components/reusable/loader';
 import { SEO } from '@/components/reusable/seo';
 import { StructuredData } from '@/components/reusable/structured-data';
@@ -18,6 +19,7 @@ export function HomePage() {
       <div className="min-h-screen bg-black text-white">
         <Hero />
         <ProjectGrid limit={3} />
+        <BlogGrid limit={3} />
         <Suspense fallback={<Loader />}>
           <Contact />
         </Suspense>
